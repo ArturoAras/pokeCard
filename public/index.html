@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600;700&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="/src/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>PokeCard</title>
+</head>
+<body>
+    <div class="div__containerPokemon" id="div__containerPokemon">
+        <input type="button" value="<" id="btn__previousPokemon">
+        <div class="div__cardPokemon">
+            <div class="div__imgPokemon" id="div__imgPokemon">
+                <!-- foto del pokemon -->
+            </div>
+            <div class="div__goPokedex">
+                <a id="a__goPokedex" target="_blank"><button class="btn__goPokedex"></button></a>
+            </div>
+            <div class="div__infoPokemon" id="div__infoPokemon">
+                <!-- informacion del pokemon -->
+            </div>
+        </div>
+        <input type="button" value=">" id="btn__nextPokemon">
+    </div>
+    <div class="div__formPokemon">
+        <form id="formulario">
+            <input type="text" id="search" placeholder="Ingresa un nombre o ID de un Pokémon">
+            <button type="submit" for="search" id="btn__searchPokemon">search</button>
+        </form>
+    </div>
+    <script src="../src/javascript/functions.js"></script>
+    <script src="../src/javascript/index.js"></script>
+</body>
+</html>
