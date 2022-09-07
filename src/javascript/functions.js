@@ -9,6 +9,7 @@ const pokeFetch = (link, param1) => {
         backgroundColor(res.types);
         pictureCard(res);
         goToPokedex(param1);
+        pictureBase(res, param1)
     })
     .catch( e => console.log('Error => ', e));
 };
@@ -94,6 +95,33 @@ const pictureCard = (information) => {//Pinta los objetos en la mitad superior d
     `
 };
 
+const pictureBase = (information, id) => {
+
+    const div__infoPokemon = document.getElementById('div__infoPokemon');
+
+    const types = []
+    if(information.types.length >= 1){
+        for(i = 0; i<information.types.length; i++){
+            types.push(information.types[i].type.name)
+        }
+    }
+    const height = information.height
+    const stats = information.stats
+
+    div__infoPokemon.innerHTML = `
+                                    <h2 class=title_id">#${id}</h2>
+                                    <h4 class="type">Tipo: </h4>
+                                    <label class="type_name">${types}</label>
+                                    <h4 class="height">Altura: </h4>
+                                    <label class="height_num">${height}</label>
+                                    <h4 class="hp">${stats[0].stat.name}: </h4>
+                                    <label class="hp_num"> ${stats[0].base_stat}</label>
+                                    <h4 class="attack">${stats[1].stat.name}: </h4>
+                                    <label class="attack_num"> ${stats[1].base_stat}</label>
+                                    <h4 class="defense">${stats[2].stat.name}: </h4>
+                                    <label class="defense_num">${stats[2].base_stat}</label>`
+}
+
 const goToPokedex = (id) => {//Te dirije a la pokedex oficial de Pokémon
     const a = document.getElementById('a__goPokedex');
     a.setAttribute('href', `https://www.pokemon.com/us/pokedex/${id}`)
@@ -101,7 +129,7 @@ const goToPokedex = (id) => {//Te dirije a la pokedex oficial de Pokémon
 
 const nextPokemon = (id) => {
     document.getElementById('btn__nextPokemon').addEventListener('click', (ev) => {
-        ev.preventDefault();
+        // ev.preventDefault();
         if(id == 905){
             pokeFetch('https://pokeapi.co/api/v2/pokemon/', 1)
             return n = 1;
@@ -116,7 +144,7 @@ const nextPokemon = (id) => {
 
 const previousPokemon = (id) => {
     document.getElementById('btn__previousPokemon').addEventListener('click', (ev) => {
-        ev.preventDefault();
+        // ev.preventDefault();
         if(id == 1){
             pokeFetch('https://pokeapi.co/api/v2/pokemon/', 905)
             return n = 905;

@@ -1,4 +1,7 @@
 .div__containerPokemon{
+    //background-image: url('/src/images/water.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     width: 100vw;
     height: 80vh;
@@ -84,6 +87,50 @@
             height: 50%;
             background-color: rgb(220, 220, 220);
             border-top: 1px solid rgb(0, 0, 0);
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 3fr, repeat(5, 1fr);
+            grid-template-areas:
+            "title title"
+            "type type_name"
+            "height height_num"
+            "hp hp_num"
+            "attack attack_num"
+            "defense defense_num";
+            .title_id{
+                grid-area: title;
+            }
+            .type{
+                grid-area: type;
+            }
+            .type_name{
+                grid-area: type_name
+            }
+            .height{
+                grid-area: height;
+            }
+            .height_num{
+                grid-area: height_num;
+            }
+            .hp{
+                grid-area: hp;
+            }
+            .hp_num{
+                grid-area: hp_num;
+            }
+            .attack{
+                grid-area: attack;
+            }
+            .attack_num{
+                grid-area: attack_num;
+            }
+            .defense{
+                grid-area: defense;
+            }
+            .defense_num{
+                grid-area: defense_num;
+            }
         }
     }
 }

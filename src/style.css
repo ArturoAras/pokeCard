@@ -5,6 +5,8 @@
   font-family: 'Oswald', sans-serif; }
 
 .div__containerPokemon {
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   width: 100vw;
   height: 80vh;
@@ -80,4 +82,31 @@
       width: 100%;
       height: 50%;
       background-color: gainsboro;
-      border-top: 1px solid black; }
+      border-top: 1px solid black;
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 3fr, repeat(5, 1fr);
+      grid-template-areas: "title title" "type type_name" "height height_num" "hp hp_num" "attack attack_num" "defense defense_num"; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .title_id {
+        grid-area: title; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .type {
+        grid-area: type; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .type_name {
+        grid-area: type_name; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .height {
+        grid-area: height; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .height_num {
+        grid-area: height_num; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .hp {
+        grid-area: hp; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .hp_num {
+        grid-area: hp_num; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .attack {
+        grid-area: attack; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .attack_num {
+        grid-area: attack_num; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .defense {
+        grid-area: defense; }
+      .div__containerPokemon .div__cardPokemon .div__infoPokemon .defense_num {
+        grid-area: defense_num; }
